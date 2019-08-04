@@ -1,0 +1,16 @@
+James Yang
+
+When designing my programming, I was assumming that the user would not get annoyed by constant prompt of getting asked whether they would like to appease the TAs or not. I also assumed that the textfile would read in perfectly but it doesn't so you need to use file.get() to fix that. I am assuming that the user isn't trying to run too many commands at once otherwise the program cant load the next level sometimes.
+
+--------------------------List of Errors-------------------------
+
+SKILL DISPLAY: The skills won't appear on the map but they are there. I wasn't too sure how to fix that problem and I unfortunately did not have enough time to debug that issue due to finals. 
+When you walk over the spot it will still give you a skill. 
+
+VALGRIND BUG??: In my Maze::set_location_maze(), I commented out the delete start and delete end (LINES 144 & 171) because when I compiled the maze, it would remove the start and end text characters. BUT when I run it in VALGRIND, the start and the end appear. THAT IS WHY I HAVE A MEMORY LEAK. BUT IF I INCLUDE THE DELETES IN THE TWO LINES THEN I DON'T HAVE ANY MEMORY LEAKS.
+
+DELETION OF T: I didn't construct the entirety of my maze in the constructor which means my deconstructor doesn't remove the TAs symbol in the map. SO when you get caught at any level or lose at level 3, the T's are still in the map. (MINOR BUG) because the T's don't mean anything after because I reset the location of the TAs. 
+
+------------------------------------------------------------------
+My test plan was essentially moving my player next to the thing I needed it to do. Example would be getting caught by a TA, I would hard code values to make it work. My testing worked out for the most part. I To solve these problems, I had to manually sift through my code to determine the issue. I wish TAs had office hours on the week of finals week because they are typically very helpful. 
+
